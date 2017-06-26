@@ -1,0 +1,1408 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.thodoris.net/ontology/film-festival-model/"
+     xml:base="http://www.thodoris.net/ontology/film-festival-model/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:t="http://purl.org/NET/c4dm/timeline.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ffschema="http://www.thodoris.net/ontology/film-festival-model/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:ontology="http://dbpedia.org/ontology/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.thodoris.net/ontology/film-festival-model/">
+        <owl:imports rdf:resource="http://dbpedia.org/ontology/"/>
+        <rdfs:comment>A Film Festival OWL ontology</rdfs:comment>
+        <owl:priorVersion rdf:resource="http://www.thodoris.net/ontology/film-festival-model/old"/>
+        <rdfs:label>Film Festival Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+    <!-- http://purl.org/NET/c4dm/event.owl#place -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/NET/c4dm/event.owl#place"/>
+    
+
+
+    <!-- http://purl.org/NET/c4dm/event.owl#time -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/NET/c4dm/event.owl#time"/>
+    
+
+
+    <!-- http://purl.org/NET/c4dm/timeline.owl#end -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/NET/c4dm/timeline.owl#end"/>
+    
+
+
+    <!-- http://purl.org/NET/c4dm/timeline.owl#start -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/NET/c4dm/timeline.owl#start"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Movie -->
+
+    <owl:AnnotationProperty rdf:about="Movie"/>
+    
+
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/based_near -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/based_near"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+     <!-- http://www.thodoris.net/ontology/film-festival-model/servesCuisine -->
+
+		<owl:ObjectProperty rdf:about="servesCuisine">
+			<rdfs:domain rdf:resource="Restaurant"/>
+			<rdfs:range rdf:resource="Cusine"/>
+			<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">servesCuisine</rdfs:label>
+		 </owl:ObjectProperty>
+	 
+	    
+    <!-- http://www.thodoris.net/ontology/film-festival-model/priceRange -->
+
+    <owl:ObjectProperty  rdf:about="priceRange">
+        <rdfs:domain rdf:resource="LocalBusiness"/>
+        <rdfs:range rdf:resource="PriceRange"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">priceRange</rdfs:label>
+    </owl:ObjectProperty>
+
+	<!-- http://www.thodoris.net/ontology/film-festival-model/hasGenre -->
+
+    <owl:ObjectProperty rdf:about="hasGenre">
+        <rdfs:domain rdf:resource="Movie"/>
+		<rdfs:range rdf:resource="Genre"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Genre of a Movie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasGenre</rdfs:label>
+    </owl:ObjectProperty>
+	
+    
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/hasDirector -->
+
+    <owl:ObjectProperty rdf:about="hasDirector">
+		<owl:equivalentProperty rdf:resource="isDirectedBy" />
+        <rdfs:domain rdf:resource="Movie"/>
+        <rdfs:range rdf:resource="Director"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A director of a movie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDirector</rdfs:label>
+    </owl:ObjectProperty>
+    
+	
+    <owl:ObjectProperty rdf:about="isDirectedBy">
+        <rdfs:domain rdf:resource="Movie"/>
+        <rdfs:range rdf:resource="Director"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isDirectedBy</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/hasEvent -->
+
+    <owl:ObjectProperty rdf:about="hasEvent">
+        <rdfs:domain rdf:resource="Festival"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An event of a FilmFestival</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+	<!-- http://www.thodoris.net/ontology/film-festival-model/hasActor -->
+
+    <owl:ObjectProperty rdf:about="hasActor">
+        <owl:inverseOf rdf:resource="isActorIn"/>
+        <rdfs:domain rdf:resource="Movie"/>
+        <rdfs:range rdf:resource="Actor"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actors participating in a movie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasActor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/hasActress -->
+
+    <owl:ObjectProperty rdf:about="hasActress">
+        <rdfs:subPropertyOf rdf:resource="hasActor"/>
+        <owl:inverseOf rdf:resource="isActressIn"/>
+        <rdfs:domain rdf:resource="Movie"/>
+		<rdfs:range rdf:resource="WomenActors"/>
+        <owl:propertyDisjointWith rdf:resource="hasMaleActor"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actress participating in a movie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasActress</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/hasMaleActor -->
+
+    <owl:ObjectProperty rdf:about="hasMaleActor">
+        <rdfs:subPropertyOf rdf:resource="hasActor"/>
+        <owl:inverseOf rdf:resource="isMaleActorIn"/>
+        <rdfs:domain rdf:resource="Movie"/>
+		<rdfs:range rdf:resource="MenActors"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Men actors participating in a movie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMaleActor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/isActorIn -->
+
+    <owl:ObjectProperty rdf:about="isActorIn">
+        <rdfs:domain rdf:resource="Actor"/>
+        <rdfs:range rdf:resource="Movie"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isActorIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/isActressIn -->
+
+    <owl:ObjectProperty rdf:about="isActressIn">
+        <rdfs:subPropertyOf rdf:resource="isActorIn"/>
+        <owl:propertyDisjointWith rdf:resource="isMaleActorIn"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isActressIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/isMaleActorIn -->
+
+    <owl:ObjectProperty rdf:about="isMaleActorIn">
+        <rdfs:subPropertyOf rdf:resource="isActorIn"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isMaleActorIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+	
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/sex -->
+
+    <owl:ObjectProperty rdf:about="sex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="Person"/>
+        <rdfs:range rdf:resource="PersonSex"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sex of a person.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sex</rdfs:label>
+    </owl:ObjectProperty>
+	
+   <!-- http://www.thodoris.net/ontology/film-festival-model/adjacentPlace -->
+   <owl:ObjectProperty rdf:ID="adjacentPlace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty" />
+    <rdfs:domain rdf:resource="Place" />
+    <rdfs:range rdf:resource="Place" />
+  </owl:ObjectProperty>
+
+	
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // DatatypeProperties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+	
+    <!-- http://www.thodoris.net/ontology/film-festival-model/name -->
+
+    <owl:DatatypeProperty rdf:about="name">
+         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		 <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</rdfs:label>
+    </owl:DatatypeProperty>
+	
+	
+	<!-- http://www.thodoris.net/ontology/film-festival-model/description -->
+
+   <owl:DatatypeProperty  rdf:about="description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		 <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">description</rdfs:label>
+   </owl:DatatypeProperty>
+	
+	
+	<owl:DatatypeProperty rdf:about="firstname">
+		  <rdfs:domain rdf:resource="Person"/>
+          <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		  <rdfs:subPropertyOf rdf:resource="name"/>
+		  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">First name</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">firstname</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/lastName -->
+
+    <owl:DatatypeProperty rdf:about="lastname">
+        <rdfs:domain rdf:resource="Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		 <rdfs:subPropertyOf rdf:resource="name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Last name</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lastname</rdfs:label>
+    </owl:DatatypeProperty>
+    
+	  <!-- http://www.thodoris.net/ontology/film-festival-model/birthDate -->
+
+    <owl:DatatypeProperty rdf:about="birthDate">
+        <rdfs:domain rdf:resource="Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">birthDate</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/maximumAttendeeCapacity -->
+
+    <owl:DatatypeProperty rdf:about="maximumAttendeeCapacity">
+        <rdfs:domain rdf:resource="Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maximumAttendeeCapacity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+	 <!-- http://www.thodoris.net/ontology/film-festival-model/academyAwards -->
+
+   <owl:DatatypeProperty rdf:about="academyAwards">
+        <rdfs:domain rdf:resource="Director"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">academyAwards</rdfs:label>
+    </owl:DatatypeProperty>
+    
+	<!-- http://www.thodoris.net/ontology/film-festival-model/oscarAwards -->
+
+   <owl:DatatypeProperty rdf:about="oscarAwards">
+        <rdfs:domain rdf:resource="Actor"/>
+         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+		 <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oscarAwards</rdfs:label>
+    </owl:DatatypeProperty>
+    
+	<!-- http://www.thodoris.net/ontology/film-festival-model/smokingAllowed -->
+
+     <owl:DatatypeProperty rdf:about="smokingAllowed">
+        <rdfs:domain rdf:resource="Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">smokingAllowed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+	 <!-- http://www.thodoris.net/ontology/film-festival-model/isAlive -->
+
+    <owl:DatatypeProperty rdf:about="isAlive">
+        <rdfs:domain rdf:resource="Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAlive</rdfs:label>
+    </owl:DatatypeProperty>
+    
+	 
+    <!-- http://www.thodoris.net/ontology/film-festival-model/openingHours -->
+
+     <owl:DatatypeProperty rdf:about="openingHours">
+         <rdfs:domain rdf:resource="LocalBusiness"/>
+         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">openingHours</rdfs:label>
+     </owl:DatatypeProperty>
+    
+    
+    
+    <!-- http://www.thodoris.net/ontology/film-festival-model/url -->
+
+    <owl:DatatypeProperty rdf:about="url">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of the item.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+	
+	<!-- http://www.thodoris.net/ontology/film-festival-model/Festival -->
+
+    <owl:Class rdf:about="Festival">
+        <owl:disjointWith rdf:resource="Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A festival.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Festival</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/FilmFestival -->
+
+    <owl:Class rdf:about="FilmFestival">
+        <rdfs:subClassOf rdf:resource="Festival"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A festival of films.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FilmFestival</rdfs:label>
+    </owl:Class>
+    
+    
+	   <!-- http://schema.org/Festival -->
+
+    <owl:Class rdf:about="http://schema.org/Festival">
+        <owl:equivalentClass rdf:resource="Festival"/>
+    </owl:Class>
+    
+
+    <!-- http://dbpedia.org/ontology/FilmFestival -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/FilmFestival">
+        <owl:equivalentClass rdf:resource="FilmFestival"/>
+    </owl:Class>
+    
+
+    <!-- http://dbpedia.org/ontology/Wikidata:Q11424 -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Wikidata:Q11424">
+        <owl:equivalentClass rdf:resource="Movie"/>
+    </owl:Class>
+    
+
+    <!-- http://dbpedia.org/ontology/Wikidata:Q11707 -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Wikidata:Q11707">
+        <owl:equivalentClass rdf:resource="Restaurant"/>
+    </owl:Class>
+    
+
+    <!-- http://purl.org/NET/c4dm/event.owl#Event -->
+
+    <owl:Class rdf:about="http://purl.org/NET/c4dm/event.owl#Event"/>
+    
+
+    <!-- http://purl.org/NET/c4dm/timeline.owl#Interval -->
+
+    <owl:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#Interval"/>
+    
+	
+	<!-- http://www.thodoris.net/ontology/film-festival-model/Movie -->
+
+    <owl:Class rdf:about="Movie">
+        <owl:disjointWith rdf:resource="Person"/>
+		<owl:disjointWith rdf:resource="Place"/>
+    </owl:Class>
+  
+  
+    <!-- http://schema.org/Movie -->
+
+    <owl:Class rdf:about="http://schema.org/Movie">
+        <owl:equivalentClass rdf:resource="Movie"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="hasDirector"/>
+				<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+    </owl:Class>
+       
+    <owl:Class rdf:about="Genre">
+        <owl:oneOf rdf:parseType="Collection">
+			<owl:Thing rdf:about="genre_Drama"/>
+			<owl:Thing rdf:about="genre_Thriller"/>
+			<owl:Thing rdf:about="genre_Comedy"/>
+			<owl:Thing rdf:about="genre_Action"/>
+			<owl:Thing rdf:about="genre_Western"/>
+	  </owl:oneOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A movie genre.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Genre</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://schema.org/Restaurant -->
+
+    <owl:Class rdf:about="http://schema.org/Restaurant">
+        <owl:equivalentClass rdf:resource="Restaurant"/>
+    </owl:Class>
+    
+	 <!-- http://schema.org/Cusine -->
+	 <owl:Class rdf:about="Cusine">
+        <owl:oneOf rdf:parseType="Collection">
+			<owl:Thing rdf:about="cusine_Greek"/>
+			<owl:Thing rdf:about="cusine_Italian"/>
+			<owl:Thing rdf:about="cusine_Fish"/>
+			<owl:Thing rdf:about="cusine_Local"/>
+			<owl:Thing rdf:about="cusine_East"/>
+	  </owl:oneOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cusine </rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cusine</rdfs:label>
+    </owl:Class>
+
+      
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Actor -->
+
+    <owl:Class rdf:about="Actor">
+        <rdfs:subClassOf rdf:resource="Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A movie actor.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Director -->
+
+    <owl:Class rdf:about="Director">
+        <rdfs:subClassOf rdf:resource="Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A movie director.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Director</rdfs:label>
+    </owl:Class>
+    
+	<!-- http://www.thodoris.net/ontology/film-festival-model/AwardedDirectors -->
+
+    <owl:Class rdf:about="AwardedDirectors">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Director"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="academyAwards"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+		This is an Intersection of Director Class with a 
+		restriction on academyAwards property to distinct actors with at least one academy award.
+		</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AwardedDirectors</rdfs:label>
+    </owl:Class>
+	
+
+   
+    <!-- http://www.thodoris.net/ontology/film-festival-model/LocalBusiness -->
+
+    <owl:Class rdf:about="LocalBusiness">
+        <rdfs:subClassOf rdf:resource="Place"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LocalBusiness</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.w3.org/ns/regorg#RegisteredOrganization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/MenActors -->
+
+    <owl:Class rdf:about="MenActors">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Actor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="sex"/>
+                        <owl:hasValue rdf:resource="Male"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+		This is an Intersection of Actor Class with a 
+		restriction on Sex property to distinct men actors.
+		</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MenActors</rdfs:label>
+    </owl:Class>
+    
+	   <!-- http://www.thodoris.net/ontology/film-festival-model/WomenActors -->
+
+    <owl:Class rdf:about="WomenActors">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Actor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="sex"/>
+                        <owl:hasValue rdf:resource="Female"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+		This is an Intersection of Actor Class with a 
+		restriction on Sex property to distinct women actors.
+		</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WomenActors</rdfs:label>
+    </owl:Class>
+	
+    <!-- http://www.thodoris.net/ontology/film-festival-model/OscarActors -->
+
+    <owl:Class rdf:about="OscarActors">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Actor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="oscarAwards"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+		This is an Intersection of Actor Class with a 
+		restriction on oscarAwards property to distinct actors with at least one oscar award.
+		</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OscarActors</rdfs:label>
+    </owl:Class>
+
+	<!-- http://www.thodoris.net/ontology/film-festival-model/DramaQueens -->
+
+    <owl:Class rdf:about="DramaQueens">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="OscarActors"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="isActressIn"/>
+                        <owl:someValuesFrom rdf:resource="DramaMovie"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+		This is an Intersection of OscarActors Class with a 
+		restriction on isActressIn property to distinct actress with oscars that play in Drama Movies.
+		</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DramaQueens</rdfs:label>
+    </owl:Class>
+
+   
+	
+    <!-- http://www.thodoris.net/ontology/film-festival-model/DramaMovie -->
+
+    <owl:Class rdf:about="DramaMovie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Movie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="hasGenre"/>
+                        <owl:hasValue rdf:resource="genre_Drama"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+		This is an Intersection of Movie Class with a 
+		restriction on hasGender property to distinct drama movies.
+		</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DramaMovie</rdfs:label>
+    </owl:Class>
+
+  
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Person -->
+
+    <owl:Class rdf:about="Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <owl:disjointWith rdf:resource="Place"/>
+        <owl:disjointWith rdf:resource="Restaurant"/>
+        <dc:source rdf:resource="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A person (alive, dead, undead, or fictional).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person</rdfs:label>
+    </owl:Class>
+    
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/PersonSex -->
+
+    <owl:Class rdf:about="PersonSex">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Female"/>
+                    <rdf:Description rdf:about="Male"/>
+                    <rdf:Description rdf:about="Transexual"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Place -->
+
+    <owl:Class rdf:about="Place">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Entities that have a somewhat fixed, physical extension.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Place</rdfs:label>
+    </owl:Class>
+    
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Restaurant -->
+
+    <owl:Class rdf:about="Restaurant">
+        <rdfs:subClassOf rdf:resource="LocalBusiness"/>
+    </owl:Class>
+  
+      <!-- http://www.thodoris.net/ontology/film-festival-model/PriceRange -->
+	 <owl:Class rdf:about="PriceRange">
+        <owl:oneOf rdf:parseType="Collection">
+			<owl:Thing rdf:about="pricerange_Cheap"/>
+			<owl:Thing rdf:about="pricerange_Normal"/>
+			<owl:Thing rdf:about="pricerange_Expensive"/>
+
+	  </owl:oneOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PriceRange </rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PriceRange</rdfs:label>
+    </owl:Class>
+	
+	    <!-- http://www.thodoris.net/ontology/film-festival-model/CheapRestaurants -->
+
+		<owl:Class rdf:about="CheapRestaurants">
+			<owl:equivalentClass>
+				<owl:Class>
+					<owl:intersectionOf rdf:parseType="Collection">
+						<rdf:Description rdf:about="Restaurant"/>
+						<owl:Restriction>
+							<owl:onProperty rdf:resource="priceRange"/>
+							<owl:hasValue rdf:resource="pricerange_Cheap"/>
+						</owl:Restriction>
+					</owl:intersectionOf>
+				</owl:Class>
+			</owl:equivalentClass>
+			<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			This is an Intersection of Restaurant Class with a 
+			restriction on priceRange property to distinct cheap restaurants
+			</rdfs:comment>
+			<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CheapRestaurants</rdfs:label>
+		</owl:Class>
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/peopleContributingAtFilms -->
+
+    <owl:Class rdf:about="peopleContributingAtFilms">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Actor"/>
+                    <rdf:Description rdf:about="Director"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+		This is a Union of two Classes.
+		We did not want to specify that the two classes must be
+		disjoint: it is possible that a Director is also an actor.
+		</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">People Conributing At Films (Directors and Actors)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+	
+	 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+
+    <!-- http://dbpedia.org/ontology/Film -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/ontology/Film">
+        <owl:sameAs rdf:resource="Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Restaurant -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/ontology/Restaurant">
+        <owl:sameAs rdf:resource="Restaurant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Female -->
+
+    <owl:NamedIndividual rdf:about="Female">
+        <rdf:type rdf:resource="PersonSex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Male -->
+
+    <owl:NamedIndividual rdf:about="Male">
+        <rdf:type rdf:resource="PersonSex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Movie -->
+
+    <owl:NamedIndividual rdf:about="Movie"/>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Restaurant -->
+
+    <owl:NamedIndividual rdf:about="Restaurant"/>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/Transexual -->
+
+    <owl:NamedIndividual rdf:about="Transexual">
+        <rdf:type rdf:resource="PersonSex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/movie1 -->
+
+    <owl:NamedIndividual rdf:about="movie1">
+        <rdf:type rdf:resource="Movie"/>
+        <hasActor rdf:resource="person-dorothy-comingore"/>
+        <hasActor rdf:resource="person-joseph-cotten"/>
+        <hasDirector rdf:resource="person-orson-welles"/>
+        <hasGenre  rdf:resource="genre_Drama"/>
+        <name>Citizen Kane</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/movie2 -->
+
+    <owl:NamedIndividual rdf:about="movie2">
+        <rdf:type rdf:resource="Movie"/>
+        <hasActor rdf:resource="person-jack-nicholson"/>
+        <hasActress rdf:resource="person-louise-fletcher"/>
+        <hasActor rdf:resource="person-william-redfield"/>
+        <hasDirector rdf:resource="person-milos-forman"/>
+        <hasGenre  rdf:resource="genre_Drama"/>
+        <name>One Flew Over the Cuckoo&apos;s Nest</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/movie3 -->
+
+    <owl:NamedIndividual rdf:about="movie3">
+        <rdf:type rdf:resource="Movie"/>
+        <hasActor rdf:resource="person-anthony-hopkins"/>
+        <hasActor rdf:resource="person-liam-neeson"/>
+        <hasActor rdf:resource="person-mel-gibson"/>
+        <hasDirector rdf:resource="person-roger-donaldson"/>
+        <hasGenre  rdf:resource="genre_Thriller"/>
+        <name>The Boundy</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/movie4 -->
+
+    <owl:NamedIndividual rdf:about="movie4">
+        <rdf:type rdf:resource="Movie"/>
+        <hasActor rdf:resource="person-edward-burns"/>
+        <hasActor rdf:resource="person-tom-hanks"/>
+        <hasDirector rdf:resource="person-steven-spielberg"/>
+        <hasGenre  rdf:resource="genre_Drama"/>
+        <name>Saving Private Ryan</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/movie5 -->
+
+    <owl:NamedIndividual rdf:about="movie5">
+        <rdf:type rdf:resource="Movie"/>
+        <hasActor rdf:resource="person-caroline-goodall"/>
+        <hasActor rdf:resource="person-liam-neeson"/>
+        <hasDirector rdf:resource="person-steven-spielberg"/>
+        <hasGenre  rdf:resource="genre_Drama"/>
+        <name>Schindler&apos;s List</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-anthony-hopkins -->
+
+    <owl:NamedIndividual rdf:about="person-anthony-hopkins">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1937-12-31T00:00:00</birthDate>
+        <firstname>Anthony</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Hopkins</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-caroline-goodall -->
+
+    <owl:NamedIndividual rdf:about="person-caroline-goodall">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Female"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1959-11-13T00:00:00</birthDate>
+        <firstname>Caroline</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Goodall</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-dorothy-comingore -->
+
+    <owl:NamedIndividual rdf:about="person-dorothy-comingore">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Female"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1914-08-13T00:00:00</birthDate>
+        <firstname>Dorothy</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isAlive>
+        <lastname>Comingore</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-edward-burns -->
+
+    <owl:NamedIndividual rdf:about="person-edward-burns">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1968-01-29T00:00:00</birthDate>
+        <firstname>Edward</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Burns</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-jack-nicholson -->
+
+    <owl:NamedIndividual rdf:about="person-jack-nicholson">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1937-04-22T00:00:00</birthDate>
+        <firstname>Jack</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Nicholson</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-joseph-cotten -->
+
+    <owl:NamedIndividual rdf:about="person-joseph-cotten">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1905-05-15T00:00:00</birthDate>
+        <firstname>Joseph</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isAlive>
+        <lastname>Cotten</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-liam-neeson -->
+
+    <owl:NamedIndividual rdf:about="person-liam-neeson">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1952-06-07T00:00:00</birthDate>
+        <firstname>Liam</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Neeson</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-louise-fletcher -->
+
+    <owl:NamedIndividual rdf:about="person-louise-fletcher">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Female"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1934-07-22T00:00:00</birthDate>
+        <firstname>Louise</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Fletcher</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-mel-gibson -->
+
+    <owl:NamedIndividual rdf:about="person-mel-gibson">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1956-01-03T00:00:00</birthDate>
+        <firstname>Mel</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Gibson</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-milos-forman -->
+
+    <owl:NamedIndividual rdf:about="person-milos-forman">
+        <rdf:type rdf:resource="Director"/>
+        <sex rdf:resource="Male"/>
+        <academyAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</academyAwards>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1932-02-18T00:00:00</birthDate>
+        <firstname>Milos</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Forman</lastname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-oliver-stone -->
+
+    <owl:NamedIndividual rdf:about="person-oliver-stone">
+        <rdf:type rdf:resource="Director"/>
+        <sex rdf:resource="Male"/>
+        <academyAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</academyAwards>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1946-09-06T00:00:00</birthDate>
+        <firstname>Oliver</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Stone</lastname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-orson-welles -->
+
+    <owl:NamedIndividual rdf:about="person-orson-welles">
+        <rdf:type rdf:resource="Director"/>
+        <sex rdf:resource="Male"/>
+        <academyAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</academyAwards>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1915-05-06T00:00:00</birthDate>
+        <firstname>Orson</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isAlive>
+        <lastname>Welles</lastname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-roger-donaldson -->
+
+    <owl:NamedIndividual rdf:about="person-roger-donaldson">
+        <rdf:type rdf:resource="Director"/>
+        <sex rdf:resource="Male"/>
+        <academyAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</academyAwards>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1945-11-15T00:00:00</birthDate>
+        <firstname>Roger</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Donaldson</lastname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-steven-spielberg -->
+
+    <owl:NamedIndividual rdf:about="person-steven-spielberg">
+        <rdf:type rdf:resource="Director"/>
+        <sex rdf:resource="Male"/>
+        <academyAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</academyAwards>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1946-12-18T00:00:00</birthDate>
+        <firstname>Steven</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Spielberg</lastname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-tom-hanks -->
+
+    <owl:NamedIndividual rdf:about="person-tom-hanks">
+        <rdf:type rdf:resource="Actor"/>
+        <rdf:type rdf:resource="MenActors"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1956-07-09T00:00:00</birthDate>
+        <firstname>Tom</firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isAlive>
+        <lastname>Hanks</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/person-william-redfield -->
+
+    <owl:NamedIndividual rdf:about="person-william-redfield">
+        <rdf:type rdf:resource="Actor"/>
+        <sex rdf:resource="Male"/>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1927-01-26T00:00:00</birthDate>
+        <firstname>William </firstname>
+        <isAlive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isAlive>
+        <lastname>Redfield</lastname>
+        <oscarAwards rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</oscarAwards>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/restaurant1 -->
+
+    <owl:NamedIndividual rdf:about="restaurant1">
+        <rdf:type rdf:resource="Restaurant"/>
+        <maximumAttendeeCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">50</maximumAttendeeCapacity>
+        <name>Troikas Place</name>
+        <openingHours>14:00:00-24:00:00</openingHours>
+        <priceRange rdf:resource="pricerange_Expensive" />
+        <servesCuisine rdf:resource="cusine_Greek" />
+        <smokingAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smokingAllowed>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Pilton,_Somerset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/restaurant2 -->
+
+    <owl:NamedIndividual rdf:about="restaurant2">
+        <rdf:type rdf:resource="Restaurant"/>
+        <maximumAttendeeCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">30</maximumAttendeeCapacity>
+        <name>Pappa&apos;s Place</name>
+        <openingHours>19:00:00-24:00:00</openingHours>
+        <priceRange rdf:resource="pricerange_Expensive" />
+        <servesCuisine rdf:resource="cusine_Italian" />
+        <smokingAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smokingAllowed>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Summerstown,_London"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/restaurant3 -->
+
+    <owl:NamedIndividual rdf:about="restaurant3">
+        <rdf:type rdf:resource="Restaurant"/>
+        <maximumAttendeeCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">20</maximumAttendeeCapacity>
+        <name>Swordfish Palace</name>
+        <openingHours>19:00:00-24:00:00</openingHours>
+        <priceRange rdf:resource="pricerange_Normal" />
+        <servesCuisine rdf:resource="cusine_Fish" />
+        <smokingAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smokingAllowed>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Ham_Island"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/restaurant4 -->
+
+    <owl:NamedIndividual rdf:about="restaurant4">
+        <rdf:type rdf:resource="Restaurant"/>
+        <maximumAttendeeCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">20</maximumAttendeeCapacity>
+        <name>No Fork</name>
+        <openingHours>11:00:00-23:00:00</openingHours>
+        <priceRange rdf:resource="pricerange_Cheap" />
+        <servesCuisine rdf:resource="cusine_Local" />
+        <smokingAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smokingAllowed>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Pilton,_Somerset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/restaurant5 -->
+
+    <owl:NamedIndividual rdf:about="restaurant5">
+        <rdf:type rdf:resource="Restaurant"/>
+        <maximumAttendeeCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">30</maximumAttendeeCapacity>
+        <name>Mary&apos;s Place</name>
+        <openingHours>12:00:00-24:00:00</openingHours>
+        <priceRange rdf:resource="pricerange_Normal" />
+         <servesCuisine rdf:resource="cusine_Fish" />
+        <smokingAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smokingAllowed>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Pilton,_Somerset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/uk-summer-film-festival -->
+
+    <owl:NamedIndividual rdf:about="uk-summer-film-festival">
+        <rdf:type rdf:resource="FilmFestival"/>
+        <hasEvent rdf:resource="event1"/>
+        <hasEvent rdf:resource="event2"/>
+        <hasEvent rdf:resource="event3"/>
+        <hasEvent rdf:resource="event4"/>
+        <hasEvent rdf:resource="event5"/>
+        <hasEvent rdf:resource="event6"/>
+        <description> a big film festival all around UK. This summer the entrance is free !</description>
+        <name>UK SUMMER FILM FESTIVAL</name>
+        <foaf:homepage>http://www.uksummerfestival.co.uk</foaf:homepage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#event1 -->
+
+    <owl:NamedIndividual rdf:about="event1">
+        <rdf:type rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <event:place rdf:resource="loc-pilton_venue"/>
+        <event:time>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://purl.org/NET/c4dm/timeline.owl#Interval"/>
+                <t:end rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-22T22:30Z</t:end>
+                <t:start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-22T20:30Z</t:start>
+            </rdf:Description>
+        </event:time>
+        <Movie rdf:resource="#movie1"/>
+        <rdfs:label>Glastonbury Festival 2017</rdfs:label>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Pilton,_Somerset"/>
+        <foaf:homepage rdf:resource="http://www.glastonburyfestivals.co.uk/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#event2 -->
+
+    <owl:NamedIndividual rdf:about="event2">
+        <rdf:type rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <event:place rdf:resource="loc-londonunion_venue"/>
+        <event:time>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://purl.org/NET/c4dm/timeline.owl#Interval"/>
+                <t:end rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-08-12T23:30Z</t:end>
+                <t:start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-08-12T20:30Z</t:start>
+            </rdf:Description>
+        </event:time>
+        <Movie rdf:resource="#movie2"/>
+        <rdfs:label>London Movie Festival 2017</rdfs:label>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Summerstown,_London"/>
+        <foaf:homepage rdf:resource="http://www.londonfestivals.co.uk/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#event3 -->
+
+    <owl:NamedIndividual rdf:about="event3">
+        <rdf:type rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <event:place rdf:resource="loc-hamisland_venue"/>
+        <event:time>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://purl.org/NET/c4dm/timeline.owl#Interval"/>
+                <t:end rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-12T23:30Z</t:end>
+                <t:start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-12T21:30Z</t:start>
+            </rdf:Description>
+        </event:time>
+        <Movie rdf:resource="#movie3"/>
+        <rdfs:label>Ham Festival 2017</rdfs:label>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Ham_Island"/>
+        <foaf:homepage rdf:resource="http://www.londonfestivals.co.uk/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#event4 -->
+
+    <owl:NamedIndividual rdf:about="event4">
+        <rdf:type rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <event:place rdf:resource="loc-hamisland_venue"/>
+        <event:time>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://purl.org/NET/c4dm/timeline.owl#Interval"/>
+                <t:end rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-13T23:30Z</t:end>
+                <t:start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-13T21:30Z</t:start>
+            </rdf:Description>
+        </event:time>
+        <Movie rdf:resource="#movie4"/>
+        <rdfs:label>Ham Festival 2017</rdfs:label>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Ham_Island"/>
+        <foaf:homepage rdf:resource="http://www.londonfestivals.co.uk/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#event5 -->
+
+    <owl:NamedIndividual rdf:about="event5">
+        <rdf:type rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <event:place rdf:resource="loc-pilton_venue"/>
+        <event:time>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://purl.org/NET/c4dm/timeline.owl#Interval"/>
+                <t:end rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-23T22:30Z</t:end>
+                <t:start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-23T20:30Z</t:start>
+            </rdf:Description>
+        </event:time>
+        <Movie rdf:resource="#movie5"/>
+        <rdfs:label>Glastonbury Festival 2017</rdfs:label>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Pilton,_Somerset"/>
+        <foaf:homepage rdf:resource="http://www.glastonburyfestivals.co.uk/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#event6 -->
+
+    <owl:NamedIndividual rdf:about="event6">
+        <rdf:type rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <event:place rdf:resource="loc-hamisland_venue"/>
+        <event:time>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://purl.org/NET/c4dm/timeline.owl#Interval"/>
+                <t:end rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-14T23:30Z</t:end>
+                <t:start rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-14T21:30Z</t:start>
+            </rdf:Description>
+        </event:time>
+        <Movie rdf:resource="#movie5"/>
+        <rdfs:label>Ham Festival 2017</rdfs:label>
+        <foaf:based_near rdf:resource="http://dbpedia.org/resource/Ham_Island"/>
+        <foaf:homepage rdf:resource="http://www.londonfestivals.co.uk/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#loc-hamisland_venue -->
+
+    <owl:NamedIndividual rdf:about="loc-hamisland_venue">
+        <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:label>Theater of Ham </rdfs:label>
+        <geo:lat>51.522106</geo:lat>
+        <geo:long>-0.14146</geo:long>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#loc-londonunion_venue -->
+
+    <owl:NamedIndividual rdf:about="loc-londonunion_venue">
+        <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:label>Theater of London Union</rdfs:label>
+        <geo:lat>51.522106</geo:lat>
+        <geo:long>-0.13146</geo:long>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/#loc-pilton_venue -->
+
+    <owl:NamedIndividual rdf:about="loc-pilton_venue">
+        <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:label>Theater of Pilton</rdfs:label>
+        <geo:lat>51.166302 </geo:lat>
+        <geo:long>-2.587000</geo:long>
+    </owl:NamedIndividual>
+    
+
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/ffschema;Female -->
+
+
+    <owl:Thing rdf:about="Female">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/ffschema;Male -->
+
+    <owl:Thing rdf:about="Male">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.thodoris.net/ontology/film-festival-model/ffschema;Transexual -->
+
+    <owl:Thing rdf:about="Transexual">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+</rdf:RDF>
+
+
+
